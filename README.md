@@ -13,6 +13,7 @@ Renovate already uses) is left alone.
 |---|---|
 | `docker.tf` | `docker-hosted`: a hosted Docker/OCI registry with path-based routing, so images are `192.168.1.204:8081/docker-hosted/<image>:<tag>` on the normal port. Tags are immutable (`ALLOW_ONCE`). |
 | `security.tf` | `docker-hosted-pull` / `docker-hosted-push` roles and the service users `ci-push` and `k8s-pull`, with generated passwords |
+| `realms.tf` | The **complete** list of active security realms: Local Authenticating + Docker Bearer Token (needed by Docker/Podman clients, see the comment there). Removing a realm here switches it off. |
 | `terraform.tf` | Backend, providers, the Nexus connection variables |
 
 State lives in S3 (`milanoid-labs-terraform-tofu-state`, key

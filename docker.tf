@@ -12,7 +12,8 @@ resource "nexus_repository_docker_hosted" "docker_hosted" {
   online = true
 
   docker {
-    # Basic auth only: no Docker Bearer Token Realm needed, and anonymous pulls stay off.
+    # Basic auth inside the repository path; anonymous pulls stay off. Clients still need the
+    # Docker Bearer Token Realm for the Nexus-wide /v2/ challenge (see realms.tf).
     force_basic_auth   = true
     v1_enabled         = false
     path_based_routing = true
