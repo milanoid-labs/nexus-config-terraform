@@ -1,3 +1,12 @@
 .DS_Store
 .idea/
 .vscode/
+
+# OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+plan.txt
+crash.log
+*.auto.tfvars
